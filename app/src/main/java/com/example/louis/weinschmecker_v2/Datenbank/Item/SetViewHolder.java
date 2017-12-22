@@ -1,0 +1,31 @@
+package com.example.louis.weinschmecker_v2.Datenbank.Item;
+
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
+
+import com.example.louis.weinschmecker_v2.R;
+
+/**
+ * Created by louis on 21.12.2017.
+ */
+
+public class SetViewHolder extends RecyclerView.ViewHolder {
+    public TextView txt_weinname;
+    public TextView txt_jahrgang;
+    public TextView txt_land;
+    public TextView txt_preis;
+
+
+
+    public SetViewHolder(View itemView) {
+        super(itemView);
+        txt_weinname = (TextView) itemView.findViewById(R.id.txt_weinname);
+        txt_jahrgang = (TextView) itemView.findViewById(R.id.txt_jahrgang);
+        txt_land = (TextView) itemView.findViewById(R.id.txt_land);
+        txt_preis = (TextView) itemView.findViewById(R.id.txt_preis);
+
+
+
+    }
+}
