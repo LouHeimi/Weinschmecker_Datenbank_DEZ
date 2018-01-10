@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import com.example.louis.weinschmecker_v2.Datenbank.Item.Item;
 import com.example.louis.weinschmecker_v2.Datenbank.Item.SetViewHolder;
 import com.example.louis.weinschmecker_v2.Datenbank.OnTapListener;
@@ -47,13 +48,19 @@ public class VocabularyAdapter extends RecyclerView.Adapter<SetViewHolder> {
         holder.txt_land.setText(items.get(position).getLand());
         holder.txt_preis.setText(items.get(position).getPreis());
 
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (onTapListener !=null) {
+
+
+             if (onTapListener !=null) {
                     onTapListener.OnTapView(position);
                 }
+
+
+
+
+
             }
         });
     }

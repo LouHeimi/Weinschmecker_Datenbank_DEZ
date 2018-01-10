@@ -79,11 +79,11 @@ public class ScanFrag extends Fragment implements ZXingScannerView.ResultHandler
     public void handleResult(Result rawResult) {
 
         wineID = rawResult.getText();
-        SingleWineFrag singleWineFrag = new SingleWineFrag();
+        SingleWineFragBarcode singleWineFragBarcode = new SingleWineFragBarcode();
         Bundle bundle= new Bundle();
         bundle.putString("wineID", wineID);
-        singleWineFrag.setArguments(bundle);
-        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content, singleWineFrag, singleWineFrag.getTag()).commit();
+        singleWineFragBarcode.setArguments(bundle);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content, singleWineFragBarcode, singleWineFragBarcode.getTag()).commit();
         final String result = rawResult.getText();
 
     }

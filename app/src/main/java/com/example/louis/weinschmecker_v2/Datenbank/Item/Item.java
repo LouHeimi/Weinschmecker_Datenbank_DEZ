@@ -1,5 +1,7 @@
 package com.example.louis.weinschmecker_v2.Datenbank.Item;
 
+import java.sql.Blob;
+
 /**
  * Created by louis on 21.12.2017.
  */
@@ -10,22 +12,6 @@ public class Item {
     String jahrgang;
     String land;
     String preis;
-    byte[] img;
-
-
-
-
-
-    public byte[] getImg() {
-        return img;
-    }
-
-    public void setImg(byte[] img) {
-        this.img = img;
-    }
-
-
-
 
 
 
@@ -63,5 +49,7 @@ public class Item {
     public void setLand(String land) {
         this.land = land;
     }
+
+
 
 }

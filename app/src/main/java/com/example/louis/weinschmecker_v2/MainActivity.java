@@ -5,15 +5,18 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 
 
 import com.example.louis.weinschmecker_v2.Fragments.ClientFragment;
 import com.example.louis.weinschmecker_v2.Fragments.FragmentEinstellungen;
 import com.example.louis.weinschmecker_v2.Fragments.ScanFrag;
+import com.example.louis.weinschmecker_v2.Fragments.SingleWineFrag;
 import com.example.louis.weinschmecker_v2.Fragments.SucheFrag;
 import com.example.louis.weinschmecker_v2.Fragments.WeinregalFrag;
 
@@ -63,6 +66,30 @@ public class MainActivity extends AppCompatActivity {
 
 
     };
+
+//Herz Button in ListView ändern
+    private boolean paused = false;
+
+    public void buttonPressed(View view) {
+
+        ImageButton button = (ImageButton) view;
+        int icon;
+
+        if (paused) {
+            paused = false;
+            icon = R.drawable.herzleer;
+        }
+        else {
+            paused = true;
+            icon = R.drawable.herz;
+        }
+
+        button.setImageDrawable(
+                ContextCompat.getDrawable(getApplicationContext(), icon));
+
+
+    }
+
 
 
 //Zurück kommen aus Unterseiten der Webview
@@ -117,6 +144,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void openSingleView(View view) {
+
+        SingleWineFrag singleWineFrag = new SingleWineFrag();
+        getSupportFragmentManager().beginTransaction().replace(R.id.content, singleWineFrag, singleWineFrag.getTag()).commit();
+
+    }
 
 
 

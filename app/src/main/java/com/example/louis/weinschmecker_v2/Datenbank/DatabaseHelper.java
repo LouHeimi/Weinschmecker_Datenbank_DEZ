@@ -107,10 +107,6 @@ public void openDatabase (){
 
 
 
-
-
-
-
     public Cursor QueryData (String query){
         return myDatabase.rawQuery(query,null);
     }
